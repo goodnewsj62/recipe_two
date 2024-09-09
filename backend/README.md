@@ -34,6 +34,18 @@ npx prisma migrate dev
 npm run start:dev
 ```
 
+- to run unit test
+
+```bash
+npm run test
+```
+
+- to run end ro end test
+
+```bash
+npm run test:e2e
+```
+
 ## Structure
 
 This project currently use the layered architecture approach thanks to nestjs...

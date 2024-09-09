@@ -23,7 +23,6 @@ export class RecipeController {
         handles crud operations for recipes
         
     */
-
   constructor(private readonly recipeService: RecipeService) {}
 
   @Get()

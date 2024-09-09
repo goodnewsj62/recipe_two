@@ -1,11 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Prisma, Recipe } from '@prisma/client';
+import { PaginatedResult, PaginateFunction, paginator } from 'shared/paginator';
 import { DatabaseService } from 'src/database/database.service';
-import {
-  PaginatedResult,
-  PaginateFunction,
-  paginator,
-} from 'src/database/paginator';
 
 const paginate: PaginateFunction = paginator({ perPage: 10 });
 
@@ -27,7 +23,7 @@ export class RecipeService {
   }
 
   async findOne(id: number) {
-    const res = await this.databaseService.recipe.findFirst({
+    const res = await this.databaseService.recipe.findUnique({
       where: {
         id,
       },

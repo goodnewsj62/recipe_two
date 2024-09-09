@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Recipe" ADD COLUMN     "date_created" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

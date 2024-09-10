@@ -16,8 +16,8 @@ import { RecipeModule } from './recipe/recipe.module';
       },
       {
         name: 'client',
-        ttl: 60000,
-        limit: 60,
+        ttl: 60 * 1000,
+        limit: 100,
       },
     ]),
   ],

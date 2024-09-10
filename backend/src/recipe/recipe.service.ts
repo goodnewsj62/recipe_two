@@ -60,7 +60,7 @@ export class RecipeService {
 
   async destroy(id: number) {
     await this.findOne(id);
-    this.databaseService.recipe.delete({ where: { id } });
+    return await this.databaseService.recipe.delete({ where: { id } });
   }
 
   private slugify(value: string) {

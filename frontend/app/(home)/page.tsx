@@ -17,9 +17,7 @@ export default async function Home() {
     queryKey: ["recipe-list"],
     queryFn: async () => await getRecipes({}),
     getNextPageParam: (lastPage: any) => {
-      const currentPage = lastPage.data?.currentPage ?? 0;
-      const total = lastPage.data?.totalPages ?? 0;
-      return total > currentPage ? currentPage + 1 : undefined;
+      return lastPage?.data?.next;
     },
     initialPageParam: 1,
   });

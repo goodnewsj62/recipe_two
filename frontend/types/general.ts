@@ -18,8 +18,8 @@ export type paginatedResponse<U> = {
   lastPage: number;
   currentPage: number;
   perPage: number;
-  prev: number;
-  next: number;
+  prev: number | null;
+  next: number | null;
   results: U[];
 };
 

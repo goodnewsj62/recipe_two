@@ -13,8 +13,8 @@ export const Row: React.FC<ingredientType & { totalChars: number }> = ({
     <div className="text-text-primary flex w-full py-2">
       <span className="basis-[70%] overflow-hidden text-ellipsis whitespace-nowrap">
         {name}
-        {new Array(1000).fill(undefined).map(() => {
-          return <>.</>;
+        {new Array(1000).fill(undefined).map((_, index) => {
+          return <span key={index + name}>.</span>;
         })}
       </span>
       <span className="grow font-bold">{amount}</span>

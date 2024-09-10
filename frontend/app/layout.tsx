@@ -7,6 +7,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
 import { Inter, Sansita_Swashed } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 export const inter = Inter({ subsets: ["latin"] });
@@ -34,6 +35,7 @@ export default function RootLayout({
                 <main className="w-full px-4 pt-[68px] lg:container md:px-8 lg:mx-auto lg:pt-0 xl:px-16">
                   {children}
                 </main>
+                <Toaster richColors position="top-right" theme="light" />
               </Providers>
             </AppThemeWrapper>
           </ThemeProvider>

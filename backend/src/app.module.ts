@@ -12,7 +12,7 @@ import { RecipeModule } from './recipe/recipe.module';
       {
         name: 'bots',
         ttl: 1000,
-        limit: 5,
+        limit: 15,
       },
       {
         name: 'client',

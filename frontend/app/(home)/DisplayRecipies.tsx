@@ -1,9 +1,9 @@
 "use client";
 import RecipeCard from "@/components/cards/RecipeCard";
 import LoadingComponent from "@/components/loaders/LoadingComponent";
+import useFetchOnPageEnd from "@/hooks/scrollPaginate";
 import { RecipeList } from "@/types/general";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import useFetchOnPageEnd from "../hooks/scrollPaginate";
 import { getRecipes } from "./request";
 
 type DisplayRecipiesProps = {};

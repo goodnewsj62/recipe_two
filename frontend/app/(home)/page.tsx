@@ -1,4 +1,3 @@
-import { BACKEND_BASE_URL } from "@/constants";
 import routes from "@/routes";
 import { Button } from "@mui/material";
 import {
@@ -12,10 +11,6 @@ import DisplayRecipies from "./DisplayRecipies";
 import { getRecipes } from "./request";
 
 export default async function Home() {
-  const url = BACKEND_BASE_URL + routes.BACKEND.RECIPES + "/asaa";
-  const req = await fetch(url, { cache: "no-cache" });
-  const data = await req.json();
-
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery({

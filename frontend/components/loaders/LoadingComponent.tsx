@@ -21,7 +21,7 @@ const LoadingComponent: React.FC<loadingComponentProps> = ({
   if (isLoading) {
     return (
       <Box
-        sx={{ width: "100%", height: "90svh", display: "flex" }}
+        sx={{ width: "100%", height: "70svh", display: "flex" }}
         className={`flex-col !items-center !justify-center gap-2 ${className}`}
       >
         <CircularProgress color="success" />

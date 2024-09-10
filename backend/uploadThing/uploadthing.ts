@@ -9,6 +9,7 @@ export const uploadRouter = {
     },
   }).onUploadComplete((data) => {
     console.log('upload completed', data);
+    return { url: data.file.url };
   }),
 } satisfies FileRouter;
 

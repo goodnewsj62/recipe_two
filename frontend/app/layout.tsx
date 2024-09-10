@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import SideBar from "@/components/layout/SideBar";
 import Providers from "@/config/providers/CustomQueryProvider";
+import { SidebarStoreProvider } from "@/config/providers/SideBarStoreProvider";
 import AppThemeWrapper from "@/config/theme/AppThemeWrapper";
 import { lightTheme } from "@/config/theme/theme.config";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
@@ -30,11 +31,13 @@ export default function RootLayout({
           <ThemeProvider theme={lightTheme}>
             <AppThemeWrapper>
               <Providers>
-                <Header />
-                <SideBar />
-                <main className="w-full px-4 pt-[68px] lg:container md:px-8 lg:mx-auto lg:pt-0 xl:px-16">
-                  {children}
-                </main>
+                <SidebarStoreProvider>
+                  <Header />
+                  <SideBar />
+                  <main className="w-full px-4 pt-[68px] lg:container md:px-8 lg:mx-auto lg:pt-0 xl:px-16">
+                    {children}
+                  </main>
+                </SidebarStoreProvider>
                 <Toaster richColors position="top-right" theme="light" />
               </Providers>
             </AppThemeWrapper>

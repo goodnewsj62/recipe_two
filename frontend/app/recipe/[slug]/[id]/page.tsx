@@ -1,4 +1,3 @@
-import { BACKEND_BASE_URL } from "@/constants";
 import routes from "@/routes";
 import { RecipeList } from "@/types/general";
 import { appFetch } from "@/utilities/appRequest";
@@ -26,7 +25,7 @@ export async function generateStaticParams() {
 
   let posts: { id: string; slug: string }[] = [];
 
-  const url = BACKEND_BASE_URL + routes.BACKEND.RECIPES;
+  const url = routes.BACKEND.RECIPES;
   let resp: RecipeList = await appFetch(url, { params: { page: 1 } });
 
   posts = [
@@ -54,8 +53,7 @@ export async function generateStaticParams() {
 const RecipeDetail: React.FC<RecipeDetailProps> = async ({ params }) => {
   const queryClient = new QueryClient();
 
-  const url =
-    BACKEND_BASE_URL + routes.BACKEND.RECIPE_DETAIL.replace(":id", params.id);
+  const url = routes.BACKEND.RECIPE_DETAIL.replace(":id", params.id);
 
   await queryClient.prefetchQuery({
     queryKey: ["recipe-detail", params.id],

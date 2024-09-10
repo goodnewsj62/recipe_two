@@ -1,5 +1,7 @@
 "use client";
+import { useSidebarStore } from "@/config/providers/SideBarStoreProvider";
 import { SITELINKS } from "@/constants";
+import useHideOnClickedOutside from "@/hooks/useHideOnClickedOutside";
 import routes from "@/routes";
 import NavLink from "./NavLink";
 
@@ -14,17 +16,14 @@ const DEFAULT_NAV_STYLES =
   "px-6 capitalize py-4 font-medium hover:bg-[rgba(0,0,0,0.2)]";
 
 const SideBar: React.FC = ({}) => {
-  // const isOpen = useSideBarStore((state) => state.isOpen);
-  // const toggle = useSideBarStore((state) => state.toggle);
-  // const username = useAuthStore((state) => state.user?.username);
-  // const ref = useHideOnClickedOutside(() => toggle(false), ["mob__bar"]);
+  const { toggle, isOpen } = useSidebarStore((state) => state);
 
-  const isOpen = false;
+  const ref = useHideOnClickedOutside(() => toggle(false), ["mob__bar"]);
 
   return (
     <aside>
       <nav
-        // ref={ref}
+        ref={ref}
         className={`fixed -left-[220px] top-[70px] z-[300] flex h-[calc(100svh-70px)] w-[220px] ${
           isOpen && "!left-0"
         } flex-col bg-primaryColor py-6 lg:hidden`}

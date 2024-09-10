@@ -1,3 +1,4 @@
+"use client";
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 import ErrorMessage from "./ErrorMessage";
 

@@ -16,7 +16,7 @@ export default function serverModifier(app: INestApplication) {
     createRouteHandler({
       router: uploadRouter,
       config: {
-        callbackUrl: 'https://ed8f-129-205-124-205.ngrok-free.app',
+        // callbackUrl: 'https://ed8f-129-205-124-205.ngrok-free.app',
       },
     }),
   );

@@ -5,8 +5,19 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
+import { Metadata } from "next";
 
 type MyRecipeProps = { params: { username: string } };
+
+export function generateMetadata({ params }: MyRecipeProps): Metadata {
+  const username = decodeURIComponent(params.username);
+
+  return {
+    title: `${username} recipes`,
+    description: `A list of all recipe for user ${username}`,
+  };
+}
+
 const MyRecipe: React.FC<MyRecipeProps> = async ({}) => {
   const queryClient = new QueryClient();
 

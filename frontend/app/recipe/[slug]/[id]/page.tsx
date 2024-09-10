@@ -2,6 +2,7 @@ import routes from "@/routes";
 import { RecipeList } from "@/types/general";
 import { appFetch } from "@/utilities/appRequest";
 import { QueryClient } from "@tanstack/react-query";
+import { Metadata } from "next";
 import DetailPage from "./DetailPage";
 
 type RecipeDetailProps = {
@@ -48,6 +49,15 @@ export async function generateStaticParams() {
   }
 
   return posts.slice(0);
+}
+
+export function generateMetadata({ params }: RecipeDetailProps): Metadata {
+  const slug = decodeURIComponent(params.slug);
+
+  return {
+    title: `recipe ${slug}`,
+    description: `${slug} Recipe information`,
+  };
 }
 
 const RecipeDetail: React.FC<RecipeDetailProps> = async ({ params }) => {

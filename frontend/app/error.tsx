@@ -34,7 +34,10 @@ const error: React.FC<errorProps> = ({ error, reset }) => {
         <div className="py-2 text-lg">
           Oops an error occurred please reach out to support
         </div>
-        <div className="">
+        <div className="flex items-center gap-4">
+          <Button onClick={reset} variant="contained" color="info" size="large">
+            Reload
+          </Button>
           <Link href={"/"}>
             <Button variant="contained" size="large">
               Home
